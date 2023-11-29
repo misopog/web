@@ -1,51 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@font-face {
+  font-family: vecterminus12;
+  src:
+    url("/fonts/vecterminus12bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: vecterminus12;
+  src:
+    url("/fonts/vecterminus12medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 
 body {
     background-color: black;
     color: white;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'vecterminus12', monospace;
+    font-size: 1rem;
+    animation: scroll 70s linear infinite;
+    background: url(./img/bg/bg.png), #111111;
 }
 
 .center {
-     position: fixed;
+    position: fixed;
+    background-color: black;
+    border: 5px solid #ffffff;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     padding: 20px;
+    width: 350px
 }
-
 a {
     text-decoration: underline;
     color: white;
     transition: 0.5s;
 }
 
-.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  transition-duration: 0.3s;
-  transition-property: transform;
-  padding: 4px;
-}
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  transform: scale(1.1); 
-}
 
-h1 {
-    font-size: 2.35rem;
-    margin-bottom: -1%;
-}
+@keyframes scroll {
+        100%{
+          background-position: 3000px 3000px;
+        }
+      }
 
-h2,h3 {
-    font-size: 0.75rem;
-    margin-bottom: -1%;
-}
+      @media (prefers-reduced-motion) {
+        body {
+          animation: scroll 200s linear infinite;
+        }
+      }
 
-.contact {
-    font-size: 1.35rem;
+.webring {
+    position: fixed;
+    background-color: black;
+    border: 5px solid #ffffff;
+    top: 80%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 20px;
 }
