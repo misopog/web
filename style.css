@@ -1,7 +1,17 @@
 @font-face {
+ font-family: "Redaction-50";
+ src:
+   url("./fonts/Redaction/Redaction_50-Italic.woff2") format("woff2");
+ font-weight: normal;
+ font-style: italic;
+ font-display: swap;
+ }
+
+
+@font-face {
   font-family: vecterminus12;
   src:
-    url("/fonts/vecterminus12bold.otf") format("opentype");
+    url("./fonts/vecterminus12bold.otf") format("opentype");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -10,21 +20,24 @@
 @font-face {
   font-family: vecterminus12;
   src:
-    url("/fonts/vecterminus12medium.otf") format("opentype");
+    url("./fonts/vecterminus12medium.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-
-
 
 body {
     background-color: black;
     color: white;
     font-family: 'vecterminus12', monospace;
     font-size: 1rem;
-    animation: scroll 70s linear infinite;
-    background: url(./img/bg/bg.png), #111111;
+    background: #000000;
+}
+
+h1 {
+   font-weight: 600;
+   font-family: 'Redaction-50', monospace;
+   font-size: 2rem;
 }
 
 .center {
@@ -44,26 +57,3 @@ a {
     transition: 0.5s;
 }
 
-
-@keyframes scroll {
-        100%{
-          background-position: 3000px 3000px;
-        }
-      }
-
-      @media (prefers-reduced-motion) {
-        body {
-          animation: scroll 200s linear infinite;
-        }
-      }
-
-.webring {
-    position: fixed;
-    background-color: black;
-    border: 5px solid #ffffff;
-    top: 80%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    padding: 20px;
-}
