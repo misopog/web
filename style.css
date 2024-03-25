@@ -32,6 +32,8 @@ body {
     font-family: 'vecterminus12', monospace;
     font-size: 1rem;
     background: #000000;
+    overflow: hidden;
+    margin: 0;
 }
 
 h1 {
@@ -57,3 +59,16 @@ a {
     transition: 0.5s;
 }
 
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff; 
+    /* border-radius: 50%;  */
+    animation: flow 5s linear infinite; 
+    opacity: 0; 
+}
+
+@keyframes flow {
+    to {bottom: 100%; opacity: 1;} 
+}
