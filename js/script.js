@@ -1,30 +1,55 @@
-titleChanger = (text, delay) => {
-  if (!text) return;
-
-  delay = delay || 2000;
-
-  let counter = 0;
-
-  setInterval(() => {
-    if (counter < text.length) document.title = text[counter++];
-    else document.title = text[(counter = 0)];
-  }, delay);
-};
-
-titleChanger(["misopog", "follow me on twitter", "star my projects"], 2000);
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const particleContainer = document.getElementById("particle-container");
-    const numParticles = 100; 
-    const delayMultiplier = 0.05; 
-
-    for (let i = 0; i < numParticles; i++) {
-        const particle = document.createElement("div");
-        particle.classList.add("particle");
-        particle.style.left = Math.random() * 100 + 'vw'; 
-        particle.style.bottom = '0'; 
-        particle.style.animationDelay = (i * delayMultiplier) + 's'; 
-        particleContainer.appendChild(particle);
-    }
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 28, density: { enable: true, value_area: 800 } },
+    color: { value: "#ffffff" },
+    shape: {
+      type: "edge",
+      stroke: { width: 0, color: "#ffffff" },
+      polygon: { nb_sides: 3 },
+      image: { src: "", width: 290, height: 260 },
+    },
+    opacity: {
+      value: 0.091,
+      random: false,
+      anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+    },
+    size: {
+      value: 4.1,
+      random: true,
+      anim: { enable: false, speed: 40, size_min: 0.1, sync: false },
+    },
+    line_linked: {
+      enable: false,
+      distance: 250,
+      color: "#ffffff",
+      opacity: 0,
+      width: 1,
+    },
+    move: {
+      enable: true,
+      speed: 6,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: { enable: false, rotateX: 600, rotateY: 1200 },
+    },
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "remove" },
+      resize: true,
+    },
+    modes: {
+      grab: { distance: 400, line_linked: { opacity: 1 } },
+      bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+      repulse: { distance: 200, duration: 0.4 },
+      push: { particles_nb: 4 },
+      remove: { particles_nb: 2 },
+    },
+  },
+  retina_detect: false,
 });
